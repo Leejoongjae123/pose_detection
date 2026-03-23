@@ -1,13 +1,13 @@
 import streamlit as st
-import mediapipe as mp
+import mediapipe.python.solutions.pose as mp_pose_module
+import mediapipe.python.solutions.drawing_utils as mp_drawing
 import cv2
 import numpy as np
 from PIL import Image
 import io
 
 # ── MediaPipe 초기화 ──────────────────────────────────────────
-mp_pose = mp.solutions.pose
-mp_drawing = mp.solutions.drawing_utils
+mp_pose = mp_pose_module
 
 # ── 관심 포인트 정의 (몸통 주요 포인트) ────────────────────────
 TORSO_LANDMARKS = {
